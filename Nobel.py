@@ -16,7 +16,7 @@ def user_input_features():
 
   user_input_data = {'Text': texto}
 
-  features = pd.DataFrame(user_input_data, index=[0])
+  features = pd.DataFrame(user_input_data)
 
   return features
 
