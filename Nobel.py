@@ -1,8 +1,8 @@
+%%writefile Nobel.py
 import numpy as np
 import streamlit as st
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
 
 
@@ -28,13 +28,7 @@ X = nobel.Text
 y = nobel.Label
 
 vect = CountVectorizer()
-vect.fit(X)
-X_dtm = vect.transform(X)
 X_dtm = vect.fit_transform(X)
-
-tfidf_transformer = TfidfTransformer()
-tfidf_transformer.fit(X_dtm)
-tfidf_transformer.transform(X_dtm)
 
 nb = MultinomialNB()
 nb.fit(X_dtm, y)
